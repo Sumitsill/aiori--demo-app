@@ -74,20 +74,21 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#020408] text-slate-100 flex flex-col antialiased selection:bg-emerald-500/30 selection:text-emerald-200 relative overflow-x-hidden">
-      {/* Ambient Neon Mesh Glows in Pure Pitch Black */}
-      <div className="fixed top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="fixed bottom-10 right-1/4 w-[450px] h-[450px] bg-cyan-500/8 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="fixed top-1/2 right-10 w-[350px] h-[350px] bg-purple-500/8 rounded-full blur-[130px] pointer-events-none -z-10" />
+      {/* Ambient Neon Mesh Glows in Pure Pitch Black across the full wide canvas */}
+      <div className="fixed top-0 left-1/4 w-[750px] h-[750px] bg-emerald-500/10 rounded-full blur-[170px] pointer-events-none -z-10" />
+      <div className="fixed bottom-10 right-1/4 w-[700px] h-[700px] bg-cyan-500/8 rounded-full blur-[170px] pointer-events-none -z-10" />
+      <div className="fixed top-1/3 right-10 w-[550px] h-[550px] bg-purple-500/8 rounded-full blur-[160px] pointer-events-none -z-10" />
+      <div className="fixed bottom-1/4 left-10 w-[500px] h-[500px] bg-emerald-600/7 rounded-full blur-[160px] pointer-events-none -z-10" />
 
-      {/* Floating Glassmorphic Pill Navbar */}
+      {/* Floating Glassmorphic Stretched Pill Navbar */}
       <PillNavbar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         aioriConnected={aioriConnected}
       />
 
-      {/* Main Content Workspace */}
-      <main className="flex-1 w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-6">
+      {/* Full-Page Widescreen Content Workspace */}
+      <main className="flex-1 w-full max-w-[98%] xl:max-w-[1720px] mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-7 space-y-6">
         <ErrorBoundary>
           {activeTab === 'admin' && <AdminConsolePage />}
           {activeTab === 'dashboard' && <DashboardPage onNavigate={setActiveTab} />}

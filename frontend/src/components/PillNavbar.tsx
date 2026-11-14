@@ -63,18 +63,18 @@ export const PillNavbar: React.FC<PillNavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-2 sm:top-3 z-50 w-full px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-auto">
+    <header className="sticky top-2 sm:top-3 z-50 w-full px-2 sm:px-4 lg:px-6 max-w-[98%] xl:max-w-[1720px] mx-auto pointer-events-auto">
       {/* Floating Glassmorphic Pill Outer Shell */}
-      <div className="relative rounded-2xl lg:rounded-full bg-[#040711]/85 backdrop-blur-2xl border border-white/[0.09] shadow-[0_12px_45px_rgba(0,0,0,0.85)] px-3 sm:px-4 py-2 transition-all duration-300">
+      <div className="relative rounded-2xl lg:rounded-full bg-[#040711]/85 backdrop-blur-2xl border border-white/[0.09] shadow-[0_12px_45px_rgba(0,0,0,0.85)] px-3 sm:px-5 py-2 transition-all duration-300">
         {/* Subtle Ambient Neon Accent Hairline */}
         <div className="absolute top-0 left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent pointer-events-none" />
 
         <div className="flex items-center justify-between gap-2 sm:gap-4">
           {/* ── LEFT: FitPulse Brand Logo & AIORI-3 Status ── */}
-          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={() => handleTabClick('dashboard')}
-              className="flex items-center gap-2.5 group cursor-pointer focus:outline-none"
+              className="flex items-center gap-2 sm:gap-2.5 group cursor-pointer focus:outline-none"
               title="FitPulse Pro - Connected Fitness Platform"
             >
               <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-2xl bg-gradient-to-br from-emerald-500/30 via-teal-500/25 to-cyan-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 text-sm sm:text-base font-black shadow-[0_0_15px_rgba(16,185,129,0.35)] group-hover:scale-105 group-hover:border-emerald-400 transition-all duration-200">
@@ -91,7 +91,7 @@ export const PillNavbar: React.FC<PillNavbarProps> = ({
             </button>
 
             {/* AIORI-3 Status Pill */}
-            <div className="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[10px] font-mono">
+            <div className="hidden 2xl:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[10px] font-mono">
               <Globe2 className="w-3 h-3 text-amber-400" />
               <span className="text-slate-400">AIORI-3:</span>
               <span
@@ -107,8 +107,8 @@ export const PillNavbar: React.FC<PillNavbarProps> = ({
             </div>
           </div>
 
-          {/* ── CENTER: Desktop Floating Pill Navigation ── */}
-          <nav className="hidden lg:flex items-center bg-white/[0.03] border border-white/[0.06] rounded-full p-1 shadow-inner max-w-2xl overflow-x-auto no-scrollbar">
+          {/* ── CENTER: Desktop Floating Pill Navigation (Stretched to display all tabs at once) ── */}
+          <nav className="hidden lg:flex items-center justify-center bg-white/[0.03] border border-white/[0.06] rounded-full p-1 shadow-inner flex-1 max-w-4xl xl:max-w-5xl mx-2 xl:mx-4 overflow-visible">
             {navItems.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -116,7 +116,7 @@ export const PillNavbar: React.FC<PillNavbarProps> = ({
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
-                  className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                  className={`relative flex items-center gap-1.5 px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                     isActive
                       ? tab.highlight
                         ? 'bg-gradient-to-r from-amber-500/25 via-orange-500/20 to-amber-600/25 text-amber-300 border border-amber-500/40 shadow-[0_0_16px_rgba(245,158,11,0.25)]'
