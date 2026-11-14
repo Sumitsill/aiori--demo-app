@@ -107,16 +107,16 @@ export const ConsentCenterPage: React.FC<ConsentCenterProps> = ({ onNavigateToRe
   return (
     <div className="space-y-6">
       {/* Title Card */}
-      <div className="bg-[#121724] border border-white/[0.08] p-6 sm:p-7 rounded-3xl shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-5">
+      <div className="neon-card-amber p-6 sm:p-7 rounded-3xl flex flex-col md:flex-row md:items-center justify-between gap-5">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 font-mono">
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/40 font-mono shadow-[0_0_12px_rgba(245,158,11,0.3)]">
               DPDP ACT 2023 §6 • KANTARA 7807 GOVERNED
             </span>
             <span className="text-xs text-slate-400 font-mono">• Authoritative AIORI-3 Link</span>
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2.5">
-            <ShieldCheck className="w-5 h-5 text-amber-400" />
+          <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2.5 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+            <ShieldCheck className="w-5 h-5 text-amber-400 drop-shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
             Privacy & Purpose-Based Consent Center
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl leading-relaxed">
@@ -254,14 +254,14 @@ export const ConsentCenterPage: React.FC<ConsentCenterProps> = ({ onNavigateToRe
           return (
             <div
               key={p.purpose_id}
-              className={`p-6 rounded-3xl border shadow-xl flex flex-col justify-between gap-5 transition ${
+              className={`p-6 rounded-3xl flex flex-col justify-between gap-5 transition ${
                 isGranted
-                  ? 'bg-[#101c18] border-emerald-500/30 shadow-emerald-500/5'
+                  ? 'neon-card-emerald'
                   : isWithdrawn
-                  ? 'bg-[#1a1116] border-rose-500/30 shadow-rose-500/5'
+                  ? 'neon-card-rose'
                   : isStale
-                  ? 'bg-[#1a1711] border-amber-500/30'
-                  : 'bg-[#121724] border-white/[0.08]'
+                  ? 'neon-card-amber'
+                  : 'neon-card'
               }`}
             >
               {/* Header & Badges */}

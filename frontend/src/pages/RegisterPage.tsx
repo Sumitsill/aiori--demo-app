@@ -33,31 +33,35 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onSwitchToLogin }) =
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0d14] flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-md space-y-6">
+    <div className="min-h-screen bg-[#020408] flex flex-col items-center justify-center p-4 relative overflow-hidden">
+      {/* Ambient Neon Mesh Glows */}
+      <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] bg-emerald-500/12 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[130px] pointer-events-none" />
+
+      <div className="w-full max-w-md space-y-6 relative z-10">
         {/* Brand Header */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-3xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-emerald-400 p-0.5 shadow-xl shadow-emerald-500/20">
-            <div className="w-full h-full bg-[#0e121d] rounded-3xl flex items-center justify-center">
-              <Zap className="w-7 h-7 text-emerald-400" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 p-[1.5px] shadow-[0_0_30px_rgba(16,185,129,0.5)]">
+            <div className="w-full h-full bg-[#03060c] rounded-3xl flex items-center justify-center">
+              <Zap className="w-8 h-8 text-emerald-400 drop-shadow-[0_0_10px_rgba(16,185,129,0.9)]" />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">Create FitPulse Account</h1>
+          <h1 className="text-2xl font-bold text-white tracking-tight drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">Create FitPulse Account</h1>
           <p className="text-xs text-slate-400">
             Registration provisions your privacy identity with AIORI-3
           </p>
         </div>
 
         {/* Notice Info Card */}
-        <div className="bg-[#121724] border border-white/[0.08] p-3.5 rounded-2xl flex items-start gap-2.5 text-xs text-slate-300">
-          <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+        <div className="neon-card p-3.5 rounded-2xl flex items-start gap-2.5 text-xs text-slate-300">
+          <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5 drop-shadow-[0_0_6px_rgba(16,185,129,0.8)]" />
           <p className="text-[11px] leading-relaxed text-slate-400">
             Basic account creation is independent of secondary consent. You will be able to review, grant, or decline analytics and marketing sharing explicitly inside the Privacy & Consent Center.
           </p>
         </div>
 
         {/* Register Form Card */}
-        <div className="bg-[#121724] border border-white/[0.08] p-7 rounded-3xl shadow-2xl space-y-5">
+        <div className="neon-card-emerald p-7 rounded-3xl space-y-5">
           {error && (
             <div className="p-3.5 rounded-2xl bg-rose-500/15 border border-rose-500/30 text-xs text-rose-300 flex items-center gap-2">
               <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
@@ -137,7 +141,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onSwitchToLogin }) =
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 text-white rounded-2xl text-xs font-bold transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 disabled:opacity-50"
+              className="neon-btn-emerald w-full py-3 text-white rounded-2xl text-xs font-bold transition flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
             >
               <span>{loading ? 'Creating Account & Provisioning...' : 'Register FitPulse Account'}</span>
               <ArrowRight className="w-4 h-4" />
@@ -147,7 +151,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onSwitchToLogin }) =
           <div className="pt-2 border-t border-white/[0.06] text-center">
             <button
               onClick={onSwitchToLogin}
-              className="text-xs text-slate-400 hover:text-emerald-400 transition"
+              className="text-xs text-slate-400 hover:text-emerald-400 transition cursor-pointer"
             >
               Already have an account? <strong className="text-white">Sign In</strong>
             </button>

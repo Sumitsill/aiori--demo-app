@@ -71,15 +71,15 @@ export const AnalyticsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Title Card */}
-      <div className="bg-[#121724] border border-white/[0.08] p-6 sm:p-7 rounded-3xl shadow-xl">
+      <div className="neon-card-cyan p-6 sm:p-7 rounded-3xl">
         <div className="flex items-center gap-2 mb-1.5">
-          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-mono">
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 font-mono shadow-[0_0_12px_rgba(6,182,212,0.3)]">
             LONGITUDINAL TELEMETRY & ENFORCEMENT
           </span>
           <span className="text-xs text-slate-400 font-mono">• AIORI-3 Runtime Pipeline</span>
         </div>
-        <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-          <BarChart3 className="w-5 h-5 text-cyan-400" />
+        <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+          <BarChart3 className="w-5 h-5 text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
           Fitness Analytics & Downstream Access Bench
         </h1>
         <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
@@ -89,19 +89,19 @@ export const AnalyticsPage: React.FC = () => {
 
       {/* Analytics Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-[#121724] border border-white/[0.08] p-6 rounded-3xl shadow-xl space-y-2">
+        <div className="neon-card-cyan p-6 rounded-3xl space-y-2">
           <h3 className="text-sm font-bold text-white mb-2">Step Count Volatility</h3>
           <StepCountChart data={telemetry?.weekly_steps || []} />
         </div>
 
-        <div className="bg-[#121724] border border-white/[0.08] p-6 rounded-3xl shadow-xl space-y-2">
+        <div className="neon-card-amber p-6 rounded-3xl space-y-2">
           <h3 className="text-sm font-bold text-white mb-2">Caloric Consumption Profile</h3>
           <CalorieTrendChart data={telemetry?.weekly_calories || []} />
         </div>
       </div>
 
       {/* Downstream Consumer Integration Test Bench (Core Hackathon Requirement) */}
-      <div className="bg-[#121724] border border-white/[0.08] p-6 sm:p-7 rounded-3xl shadow-2xl space-y-5">
+      <div className="neon-card p-6 sm:p-7 rounded-3xl space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/[0.06] pb-4">
           <div>
             <div className="flex items-center gap-2">

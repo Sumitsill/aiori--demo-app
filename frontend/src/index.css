@@ -4,29 +4,234 @@
 
 @layer base {
   body {
-    background-color: #0a0d14;
-    color: #f1f5f9;
+    background-color: #020408;
+    color: #f8fafc;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color-scheme: dark;
   }
+
+  ::selection {
+    background-color: rgba(16, 185, 129, 0.35);
+    color: #a7f3d0;
+  }
 }
 
-/* Custom dark scrollbars */
+/* Custom dark scrollbars with neon thumb */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #090c13;
+  background: #020408;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1c2438;
+  background: #151d2f;
   border-radius: 3px;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a3550;
+  background: #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
 }
 
+/* ------------------------------------------------------------- */
+/*  NEON & DEEP BLACK CYBER SYSTEM                               */
+/* ------------------------------------------------------------- */
+
+/* Base Deep Black Obsidian Card */
+.neon-card {
+  background: #060911;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.95);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.neon-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.95), 0 0 25px -4px rgba(16, 185, 129, 0.25);
+}
+
+/* Neon Emerald / Mint Card */
+.neon-card-emerald {
+  background: #050b10;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.95), 0 0 20px -5px rgba(16, 185, 129, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.neon-card-emerald:hover {
+  transform: translateY(-2.5px);
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.95), 0 0 35px -2px rgba(16, 185, 129, 0.35);
+}
+
+/* Neon Cyan / Electric Blue Card */
+.neon-card-cyan {
+  background: #040a12;
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.95), 0 0 20px -5px rgba(6, 182, 212, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.neon-card-cyan:hover {
+  transform: translateY(-2.5px);
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.95), 0 0 35px -2px rgba(6, 182, 212, 0.35);
+}
+
+/* Neon Amber / Flame Card */
+.neon-card-amber {
+  background: #0a080d;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.95), 0 0 20px -5px rgba(245, 158, 11, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.neon-card-amber:hover {
+  transform: translateY(-2.5px);
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.95), 0 0 35px -2px rgba(245, 158, 11, 0.35);
+}
+
+/* Neon Rose / Crimson Card */
+.neon-card-rose {
+  background: #0f070b;
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.95), 0 0 20px -5px rgba(244, 63, 94, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.neon-card-rose:hover {
+  transform: translateY(-2.5px);
+  border-color: rgba(244, 63, 94, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.95), 0 0 35px -2px rgba(244, 63, 94, 0.35);
+}
+
+/* Neon Purple / Violet Card */
+.neon-card-purple {
+  background: #0b0714;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.95), 0 0 20px -5px rgba(168, 85, 247, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.neon-card-purple:hover {
+  transform: translateY(-2.5px);
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.95), 0 0 35px -2px rgba(168, 85, 247, 0.35);
+}
+
+/* Neon Text Glow Utilities */
+.neon-text-emerald {
+  text-shadow: 0 0 12px rgba(16, 185, 129, 0.8), 0 0 24px rgba(16, 185, 129, 0.4);
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.8), 0 0 24px rgba(6, 182, 212, 0.4);
+}
+
+.neon-text-amber {
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.8), 0 0 24px rgba(245, 158, 11, 0.4);
+}
+
+.neon-text-rose {
+  text-shadow: 0 0 12px rgba(244, 63, 94, 0.8), 0 0 24px rgba(244, 63, 94, 0.4);
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.8), 0 0 24px rgba(168, 85, 247, 0.4);
+}
+
+/* Neon Glow Box Shadows */
+.neon-glow-emerald {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.4), inset 0 0 15px rgba(16, 185, 129, 0.15);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.4), inset 0 0 15px rgba(6, 182, 212, 0.15);
+}
+
+.neon-glow-amber {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), inset 0 0 15px rgba(245, 158, 11, 0.15);
+}
+
+.neon-glow-rose {
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.4), inset 0 0 15px rgba(244, 63, 94, 0.15);
+}
+
+/* Neon Buttons */
+.neon-btn-emerald {
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #06b6d4 100%);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.45);
+  transition: all 0.2s ease;
+}
+
+.neon-btn-emerald:hover {
+  box-shadow: 0 0 35px rgba(16, 185, 129, 0.7);
+  transform: scale(1.02);
+}
+
+.neon-btn-amber {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #ea580c 100%);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.45);
+  transition: all 0.2s ease;
+}
+
+.neon-btn-amber:hover {
+  box-shadow: 0 0 35px rgba(245, 158, 11, 0.7);
+  transform: scale(1.02);
+}
+
+.neon-btn-cyan {
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #10b981 100%);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.45);
+  transition: all 0.2s ease;
+}
+
+.neon-btn-cyan:hover {
+  box-shadow: 0 0 35px rgba(6, 182, 212, 0.7);
+  transform: scale(1.02);
+}
+
+/* Neon Hairline Divider */
+.neon-divider-emerald {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.6), transparent);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.neon-divider-cyan {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.6), transparent);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+.neon-divider-amber {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), transparent);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+/* Neon Pulse Animation */
+@keyframes neon-pulse-emerald {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.7), 0 0 10px rgba(16, 185, 129, 0.9);
+  }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse-emerald 2.5s infinite;
+}

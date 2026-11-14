@@ -116,15 +116,15 @@ export const WorkoutsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Header Card */}
-      <div className="bg-[#121724] border border-white/[0.08] p-6 sm:p-7 rounded-3xl shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="neon-card-emerald p-6 sm:p-7 rounded-3xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-mono">
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/40 font-mono shadow-[0_0_10px_rgba(16,185,129,0.25)]">
               WORKOUT LEDGER & METRICS
             </span>
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-            <Dumbbell className="w-5 h-5 text-emerald-400" />
+          <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+            <Dumbbell className="w-5 h-5 text-emerald-400 drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
             My Workouts
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">
@@ -134,7 +134,7 @@ export const WorkoutsPage: React.FC = () => {
 
         <button
           onClick={openAddModal}
-          className="px-4 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-2xl text-xs font-bold transition shadow-lg shadow-emerald-500/20 flex items-center gap-2 shrink-0 self-start sm:self-center"
+          className="neon-btn-emerald px-4 py-2.5 text-white rounded-2xl text-xs font-bold transition flex items-center gap-2 shrink-0 self-start sm:self-center cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Add Workout</span>
@@ -142,35 +142,35 @@ export const WorkoutsPage: React.FC = () => {
       </div>
 
       {/* MET Methodology Info Box */}
-      <div className="bg-[#0e121d] border border-white/[0.06] p-4 rounded-2xl flex items-start gap-3 text-xs text-slate-300">
-        <Info className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+      <div className="bg-[#03060c] border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.12)] p-4 rounded-2xl flex items-start gap-3 text-xs text-slate-300">
+        <Info className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5 drop-shadow-[0_0_6px_rgba(16,185,129,0.8)]" />
         <div className="space-y-1">
           <p className="font-semibold text-white">Metabolic Equivalent of Task (MET) Estimation</p>
           <p className="text-[11px] text-slate-400 leading-relaxed">
             When calories burned are left blank, FitPulse computes expenditure using standard physiological MET multipliers:
             Running (9.8 MET), Cycling (7.5 MET), Swimming (8.0 MET), Strength (5.0 MET), HIIT (8.5 MET), Yoga (3.0 MET).
-            Formula: <code className="text-amber-300 font-mono">Calories = MET × weight (kg) × (minutes / 60)</code>.
+            Formula: <code className="text-amber-300 font-mono bg-amber-950/40 px-1 py-0.5 rounded border border-amber-500/30">Calories = MET × weight (kg) × (minutes / 60)</code>.
           </p>
         </div>
       </div>
 
       {/* Summary KPI Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
-        <div className="p-4 rounded-2xl bg-[#121724] border border-white/[0.06] space-y-1">
+        <div className="neon-card-emerald p-4 rounded-2xl space-y-1">
           <span className="text-slate-400 text-[11px]">Total Workouts</span>
-          <p className="text-xl font-bold text-white">{summary?.total_workouts || 0}</p>
+          <p className="text-xl font-bold text-white drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]">{summary?.total_workouts || 0}</p>
         </div>
-        <div className="p-4 rounded-2xl bg-[#121724] border border-white/[0.06] space-y-1">
+        <div className="neon-card-cyan p-4 rounded-2xl space-y-1">
           <span className="text-slate-400 text-[11px]">Active Duration</span>
-          <p className="text-xl font-bold text-cyan-400">{summary?.total_duration_minutes || 0} min</p>
+          <p className="text-xl font-bold text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]">{summary?.total_duration_minutes || 0} min</p>
         </div>
-        <div className="p-4 rounded-2xl bg-[#121724] border border-white/[0.06] space-y-1">
+        <div className="neon-card-amber p-4 rounded-2xl space-y-1">
           <span className="text-slate-400 text-[11px]">Energy Expended</span>
-          <p className="text-xl font-bold text-amber-400">{Math.round(summary?.total_calories_burned || 0)} kcal</p>
+          <p className="text-xl font-bold text-amber-400 drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]">{Math.round(summary?.total_calories_burned || 0)} kcal</p>
         </div>
-        <div className="p-4 rounded-2xl bg-[#121724] border border-white/[0.06] space-y-1">
+        <div className="neon-card-rose p-4 rounded-2xl space-y-1">
           <span className="text-slate-400 text-[11px]">Distance Covered</span>
-          <p className="text-xl font-bold text-emerald-400">{summary?.total_distance_km || 0} km</p>
+          <p className="text-xl font-bold text-rose-400 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]">{summary?.total_distance_km || 0} km</p>
         </div>
       </div>
 
@@ -178,10 +178,10 @@ export const WorkoutsPage: React.FC = () => {
       <div className="flex flex-wrap items-center gap-2">
         <button
           onClick={() => setSelectedCategory('')}
-          className={`px-3 py-1.5 rounded-xl text-xs font-medium transition ${
+          className={`px-3 py-1.5 rounded-xl text-xs font-medium transition cursor-pointer ${
             selectedCategory === ''
-              ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold'
-              : 'bg-[#121724] text-slate-400 hover:text-white border border-white/[0.06]'
+              ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold shadow-[0_0_12px_rgba(16,185,129,0.3)]'
+              : 'bg-[#04060d] text-slate-400 hover:text-white border border-white/[0.06] hover:border-white/[0.12]'
           }`}
         >
           All Categories
@@ -190,10 +190,10 @@ export const WorkoutsPage: React.FC = () => {
           <button
             key={c}
             onClick={() => setSelectedCategory(c)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-medium transition ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-medium transition cursor-pointer ${
               selectedCategory === c
-                ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold'
-                : 'bg-[#121724] text-slate-400 hover:text-white border border-white/[0.06]'
+                ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-semibold shadow-[0_0_12px_rgba(16,185,129,0.3)]'
+                : 'bg-[#04060d] text-slate-400 hover:text-white border border-white/[0.06] hover:border-white/[0.12]'
             }`}
           >
             {c}
@@ -202,10 +202,10 @@ export const WorkoutsPage: React.FC = () => {
       </div>
 
       {/* Workouts Table */}
-      <div className="bg-[#121724] rounded-3xl border border-white/[0.08] shadow-xl overflow-hidden">
+      <div className="neon-card rounded-3xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-white/[0.04] text-left text-xs">
-            <thead className="bg-[#0e121d] text-slate-400 uppercase font-semibold text-[11px] tracking-wider font-mono">
+            <thead className="bg-[#020409] text-slate-400 uppercase font-semibold text-[11px] tracking-wider font-mono">
               <tr>
                 <th className="py-3.5 px-5">Workout</th>
                 <th className="py-3.5 px-5">Category</th>
@@ -226,7 +226,7 @@ export const WorkoutsPage: React.FC = () => {
                 </tr>
               ) : (
                 workouts.map((w) => (
-                  <tr key={w.id} className="hover:bg-[#161c2c] transition-colors">
+                  <tr key={w.id} className="hover:bg-[#070b14] hover:shadow-inner transition-colors">
                     <td className="py-3.5 px-5 font-semibold text-white">
                       {w.title}
                       {w.notes && <p className="text-[10px] text-slate-500 truncate max-w-xs">{w.notes}</p>}
