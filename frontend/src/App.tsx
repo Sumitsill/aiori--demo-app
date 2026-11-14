@@ -74,21 +74,20 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#020408] text-slate-100 flex flex-col antialiased selection:bg-emerald-500/30 selection:text-emerald-200 relative overflow-x-hidden">
-      {/* Ambient Neon Mesh Glows in Pure Pitch Black across the full wide canvas */}
-      <div className="fixed top-0 left-1/4 w-[750px] h-[750px] bg-emerald-500/10 rounded-full blur-[170px] pointer-events-none -z-10" />
-      <div className="fixed bottom-10 right-1/4 w-[700px] h-[700px] bg-cyan-500/8 rounded-full blur-[170px] pointer-events-none -z-10" />
-      <div className="fixed top-1/3 right-10 w-[550px] h-[550px] bg-purple-500/8 rounded-full blur-[160px] pointer-events-none -z-10" />
-      <div className="fixed bottom-1/4 left-10 w-[500px] h-[500px] bg-emerald-600/7 rounded-full blur-[160px] pointer-events-none -z-10" />
+      {/* Precision Background Atmosphere & Dot Matrix */}
+      <div className="fixed inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10 opacity-40" />
+      <div className="fixed top-0 left-1/4 w-[600px] h-[600px] bg-emerald-500/8 rounded-full blur-[150px] pointer-events-none -z-10" />
+      <div className="fixed bottom-10 right-1/4 w-[500px] h-[500px] bg-cyan-500/6 rounded-full blur-[150px] pointer-events-none -z-10" />
 
-      {/* Floating Glassmorphic Stretched Pill Navbar */}
+      {/* Docked Glassmorphic Command Pill Navbar */}
       <PillNavbar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         aioriConnected={aioriConnected}
       />
 
-      {/* Full-Page Widescreen Content Workspace */}
-      <main className="flex-1 w-full max-w-[98%] xl:max-w-[1720px] mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-7 space-y-6">
+      {/* Structured Full-Width Content Workspace */}
+      <main className="flex-1 w-full max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6">
         <ErrorBoundary>
           {activeTab === 'admin' && <AdminConsolePage />}
           {activeTab === 'dashboard' && <DashboardPage onNavigate={setActiveTab} />}
@@ -114,4 +113,3 @@ export const App: React.FC = () => {
 };
 
 export default App;
-
